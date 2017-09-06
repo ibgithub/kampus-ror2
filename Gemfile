@@ -56,4 +56,5 @@ gem 'materialize-sass'
 gem 'jquery-rails'
 
 gem 'devise'
-gem "figaro"
+gem 'figaro'
+gem 'omniauth-facebook'
