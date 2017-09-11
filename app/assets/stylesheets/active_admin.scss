@@ -1,0 +1,10 @@
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+$skinLogo: none;
+
+$skinActiveColor: #001cee;
+$skinHeaderBck: #002744;
+$panelHeaderBck: #002744;
+
+@import "active_skin";
