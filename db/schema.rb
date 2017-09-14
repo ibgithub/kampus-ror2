@@ -63,10 +63,11 @@ ActiveRecord::Schema.define(version: 20170913201656) do
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "course_id"
-    t.boolean "active"
+    t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_subscriptions_on_course_id"
+    t.index ["user_id", "course_id"], name: "index_subscriptions_on_user_id_and_course_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
