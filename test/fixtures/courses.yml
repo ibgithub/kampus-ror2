@@ -6,10 +6,11 @@ one:
   price: 
   status: MyString
   image: MyString
-
+  slug: course-one
 two:
   title: MyString
   description: MyText
   price: 
   status: MyString
   image: MyString
+  slug: course-two

@@ -6,10 +6,11 @@ one:
   description: MyString
   video_url: MyString
   image: MyString
-
+  slug: task-one
 two:
   course: two
   title: MyString
   description: MyString
   video_url: MyString
   image: MyString
+  slug: task-two

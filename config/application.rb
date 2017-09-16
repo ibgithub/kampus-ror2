@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Workspace
   class Application < Rails::Application
     #config.web_console.whitelisted_ips = '173.0.82.126'
-    config.web_console.whiny_requests = false
+    #config.web_console.whiny_requests = false
     
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
