@@ -45,7 +45,7 @@ class CoursesController < ApplicationController
     @subscription = Subscription.find(params[:item_number])
     
     if @subscription.active == false && params[:payment_status] == "Completed"
-      if @subscription.update_attributes({active: true}, payment_status: "Completed")
+      if @subscription.update_attributes({active: true, payment_status: "Completed"})
         PaymentMailer.payment_completed(@subscription).deliver
       end
     end 
