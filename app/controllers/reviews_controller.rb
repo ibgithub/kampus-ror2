@@ -7,8 +7,6 @@ class ReviewsController < ApplicationController
     @review.course = @course
     if @review.save
       redirect_to @course, notice: "Review successfully submitted"
-    else 
-      redirect_to @course, alert: "Review failed"
     end
   end
   
