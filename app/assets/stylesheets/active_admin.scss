@@ -2,9 +2,10 @@
 @import "active_admin/base";
 
 $skinLogo: none;
+@import "activeadmin_sortable_table";
+@import "active_skin";
+@import "active_admin/editor/wysiwyg";
 
 $skinActiveColor: #001cee;
 $skinHeaderBck: #002744;
 $panelHeaderBck: #002744;
-
-@import "active_skin";
