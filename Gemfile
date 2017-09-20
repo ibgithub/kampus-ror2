@@ -62,7 +62,9 @@ gem 'omniauth-facebook'
 gem 'toastr-rails'
 
 gem 'active_skin'
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+# gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'carrierwave'
+gem 'cloudinary'
 gem 'cancancan', '~> 2.0'
 
 gem 'friendly_id', '~> 5.1.0'
@@ -72,3 +74,4 @@ gem 'acts_as_list'
 gem 'activeadmin', '~> 1.0.0'
 gem "activeadmin_sortable_table", github: "sabril/activeadmin_sortable_table"
 gem 'active_admin_editor', github: "boontdustie/active_admin_editor"
+
