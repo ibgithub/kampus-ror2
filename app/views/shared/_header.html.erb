@@ -46,3 +46,20 @@
     </div>
   </nav>
 </header>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <%= form_tag courses_path, method: :get do %>
+        <div class="input-field">
+          <div class="col m1">
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>  
+          </div>
+          <div class="col m11">
+            <%= text_field_tag :search, params[:search], type: "search", placeholder: "Search Course" %>
+            <i class="material-icons">close</i>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

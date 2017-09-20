@@ -5,8 +5,12 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.new(review_params)
     @course = Course.friendly.find(params[:course_id])
     @review.course = @course
-    if @review.save
-      redirect_to @course, notice: "Review successfully submitted"
+    @review.save
+    respond_to do |format|
+      format.html do
+        redirect_to @course, notice: "Review successfully submitted"
+      end
+      format.js
     end
   end
   
