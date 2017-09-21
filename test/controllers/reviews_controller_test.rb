@@ -10,9 +10,11 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "should be able to post review if signed in and has subscribes the course" do
-    sign_in(users(:user_one))
-    post course_reviews_path(courses(:one), reviews(:one)), params: {review: {star: 5, comment: "test", course_id: courses(:one).id, user_id: users(:user_one).id} }
-    assert_redirected_to course_path(courses(:one))
+    user = users(:user_one)
+    course = courses(:one)
+    sign_in(user)
+    post course_reviews_path(course), params: {review: {star: 5, comment: "test", course_id: course.id, user_id: user.id}}
+    assert_redirected_to course_path(course)
     assert_nil flash[:alert], "Access Denied"
   end
   

@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -74,3 +75,4 @@ gem 'acts_as_list'
 gem 'activeadmin', '~> 1.0.0'
 gem "activeadmin_sortable_table", github: "sabril/activeadmin_sortable_table"
 gem 'active_admin_editor', github: "boontdustie/active_admin_editor"
+
