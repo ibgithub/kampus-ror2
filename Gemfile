@@ -76,3 +76,4 @@ gem 'activeadmin', '~> 1.0.0'
 gem "activeadmin_sortable_table", github: "sabril/activeadmin_sortable_table"
 gem 'active_admin_editor', github: "boontdustie/active_admin_editor"
 
+gem 'newrelic_rpm'
