@@ -16,28 +16,30 @@ ActiveAdmin.register Task do
     redirect_to admin_course_path(resource.course), notice: "#{resource.title} task moved to top."
   end
   
-  show do
-    attributes_table do
-      row :title
-      row :description do
-        raw resource.description
-      end
-      row :video_url
-      row :image
-      row :preview
-      row :position
-    end
-  end
+  # show do
+  #   attributes_table do
+  #     row :course_id
+  #     row :title
+  #     row :description do
+  #       raw resource.description
+  #     end
+  #     row :video_url
+  #     row :image
+  #     row :preview
+  #     row :position
+  #   end
+  # end
   
-  form do |f|
-    f.inputs do
-      f.input :title
-      f.input :description, as: :html_editor
-      f.input :video_url
-      f.input :image, hint: resource.image.present? ? image_tag(resource.image.url, height: 300) : content_tag(:span, 'No image')
-      f.input :preview
-      f.input :position
-    end
-    f.actions
-  end
+  # form do |f|
+  #   f.inputs do
+  #     f.input :course_id, as: :select, collection: resource.tasks, include_blank: false # selected: selected_country_id
+  #     f.input :title
+  #     f.input :description, as: :html_editor
+  #     f.input :video_url
+  #     f.input :image, hint: resource.image.present? ? image_tag(resource.image.url, height: 300) : content_tag(:span, 'No image')
+  #     f.input :preview
+  #     f.input :position
+  #   end
+  #   f.actions
+  # end
 end
