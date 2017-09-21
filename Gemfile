@@ -77,3 +77,5 @@ gem "activeadmin_sortable_table", github: "sabril/activeadmin_sortable_table"
 gem 'active_admin_editor', github: "boontdustie/active_admin_editor"
 
 gem 'newrelic_rpm'
+gem 'exception_notification'
+gem 'slack-notifier'
