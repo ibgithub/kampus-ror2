@@ -17,3 +17,9 @@ test:
   api_secret: zwCezftqcQ8Wk2B0Q7KUDg-f2NU
   enhance_image_tag: true
   static_image_support: false
+circleci:
+  cloud_name: imamcloud
+  api_key: '818554895969885'
+  api_secret: zwCezftqcQ8Wk2B0Q7KUDg-f2NU
+  enhance_image_tag: true
+  static_image_support: false
