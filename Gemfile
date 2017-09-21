@@ -63,6 +63,8 @@ gem 'toastr-rails'
 
 gem 'active_skin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+# gem 'carrierwave'
+# gem 'cloudinary'
 gem 'cancancan', '~> 2.0'
 
 gem 'friendly_id', '~> 5.1.0'

@@ -31,7 +31,7 @@ ActiveAdmin.register Course do
         number_to_currency(course.price)
       end
       row :status
-      row :price do
+      row :image do
         course.image.present? ? image_tag(course.image.url, height: 300) : content_tag(:span, 'No image')
       end
     end
