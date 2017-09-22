@@ -9,9 +9,9 @@ class Course < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true, numericality: { only_integer: true }
   
-  has_attached_file :image, styles: { medium: "680x300>", thumb: "170x75>" }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  # mount_uploader :image, ImageUploader
+  # has_attached_file :image, styles: { medium: "680x300>", thumb: "170x75>" }
+  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  mount_uploader :image, ImageUploader
   
   def average_rating
     reviews.blank? ? 0 : reviews.average(:star).round(2)

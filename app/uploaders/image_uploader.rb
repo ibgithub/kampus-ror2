@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -18,11 +18,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :tags => ['belajar_rails']
   
   version :medium do
-    process :resize_to_fit => [680, 300, :north]
+    process :resize_to_fit => [680, 300]
   end
   
   version :thumbnail do
-    resize_to_fit(175, 75)
+    resize_to_fit(170, 75)
   end
   
   def public_id
