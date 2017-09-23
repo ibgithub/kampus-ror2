@@ -23,6 +23,14 @@
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
             <li><%= link_to "Login", new_user_session_path %></li>
           <% else %>
+            <li>
+              <%= link_to my_cart_path do %>
+                My Cart
+                <% if current_cart.cart_items.length > 0 %>
+                  <span class="new badge"><%= current_cart.cart_items.length %></span>
+                <% end %>
+              <% end %>
+            </li>
             <!-- Dropdown Trigger -->
             <li>
               <a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
