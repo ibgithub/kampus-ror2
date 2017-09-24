@@ -24,8 +24,8 @@ class Cart < ApplicationRecord
       :business => Rails.application.secrets.paypal_email,
       :cmd => "_cart",
       :upload => 1,
-      :notify_url => "#{Rails.application.secrets.sites_url}/carts/#{self.id}/checkout_notification",
-      :return => "#{Rails.application.secrets.sites_url}/my_courses"
+      :notify_url => "#{Rails.application.secrets.site_url}/carts/#{self.id}/checkout_notification",
+      :return => "#{Rails.application.secrets.site_url}/my_courses"
     }
     cart_items.each_with_index do |item, index|
       i = index + 1
@@ -33,19 +33,20 @@ class Cart < ApplicationRecord
       params["item_number_#{i}"] = item.course_id
       params["amount_#{i}"] = item.sub_total
     end
-    "#{Rails.application.secrets.paypal_url}/cgi-bin/websrc?" + params.to_query
+    "#{Rails.application.secrets.paypal_url}/cgi-bin/webscr?" + params.to_query
   end
   
   def process_payment(params)
-    if params["payment_status"] == "completed"
-      cart_items.each_with_index do |items, index|
+    if params["payment_status"] == "Completed"
+      cart_items.each_with_index do |item, index|
+        i = index + 1
         if item.sub_total.to_f == params["mc_gross_#{i}"].to_f
-          Subscription.find_or_create_by(user: user, course_id: item.course_id, payment_status: "Completed")
+          Subscription.find_or_create_by(user: user, course_id: item.course_id, payment_status: "Completed", active: true)
         end
       end
+      self.completed = true
+      save
     end
-    self.completed = true
-    save
   end
   
   def check_discount(code)
