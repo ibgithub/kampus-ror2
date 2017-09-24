@@ -65,7 +65,17 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-
+		
+  config.action_mailer.default_url_options = { host: 'https://imam-kampus-ror.herokuapp.com' }		
+  config.action_mailer.smtp_settings = { 		  # Ignore bad email addresses and do not raise email delivery errors.
+    :address => 'smtp.gmail.com', 		  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+    :port =>587,		  # config.action_mailer.raise_delivery_errors = false
+    :user_name      => ENV['gmail_user_name'],		
+    :password       => ENV['gmail_password'],		
+    :authentication => :plain,		
+    :enable_starttls_auto => true		
+  }		
+  
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
