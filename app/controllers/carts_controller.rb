@@ -12,11 +12,15 @@ class CartsController < ApplicationController
   end
   
   def checkout_notification
-    @cart = Cart.find(params[:id])
-    unless @cart.completed?
-      @cart.process_payment(params)  
-    end 
-    head :ok
+    if PayPal::SDK::Core::API::IPN.valid?(request.raw_post) 
+      @cart = Cart.find(params[:id])
+      unless @cart.completed?
+        @cart.process_payment(params)  
+      end 
+      head :ok
+    else
+      head :not_acceptable
+    end
   end
   
   def get_discount

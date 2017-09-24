@@ -1,0 +1,18 @@
+test: &default
+
+  # Credentials for REST APIs
+  client_id: AalqOm1yAXx3A6sBUu_rzYYH_28Qn_zjf4eXBTTD1tmnLRWBhCM9irbVWCWzR2fLSJcu81V0I3ogg7O2
+  client_secret: EICVhwnOEgl6Ypu5VAwkuB1gIn8W_m0jPoOhjZvjNdcevUAwcVKIP21ry5g9xWK609pE6wV7KgnEEMVX
+
+  # Mode can be 'live' or 'sandbox'
+  mode: sandbox
+
+circleci:
+  <<: *default
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+  mode: live

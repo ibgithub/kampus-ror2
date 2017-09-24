@@ -29,7 +29,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
   test "should be redirect_to paypal when trying to subscribe a course" do
     sign_in(users(:user_one))
     # get subscribe_course_path(courses(:two))
-    # assert_redirected_to "https://www.sandbox.paypal.com/cgi-bin/websrc?" + courses(:two).paypal_link(users(:user_one))
+    # assert_redirected_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + courses(:two).paypal_link(users(:user_one))
   end
   
   test "should be redirect_to course if already subscribed" do
