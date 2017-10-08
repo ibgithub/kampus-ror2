@@ -10,4 +10,6 @@ class Api::V1::TasksController < Api::ApplicationController
     @task = @course.tasks.find(params[:id])
     json_response(@task)
   end
+  
+  
 end
