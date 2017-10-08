@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
   namespace :api do
-    resources :courses
+    scope module: :v2, constraints: ApiVersion.new('v2') do
+      resources :courses
+    end
+    scope module: :v1, constraints: ApiVersion.new('v1', true) do
+      resources :courses do
+        resources :tasks
+      end
+      get :my_courses, to: "courses#my_courses"
+    end
     post :auth, to: "authentication#authenticate"
   end
 
