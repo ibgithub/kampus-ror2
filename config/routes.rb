@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :courses
+    post :auth, to: "authentication#authenticate"
   end
 
   devise_for :admin_users, ActiveAdmin::Devise.config

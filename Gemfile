@@ -84,3 +84,4 @@ gem  "redis", '~> 3.0'
 gem 'paypal-sdk-core', :git => "https://github.com/paypal/sdk-core-ruby.git"
 
 gem 'active_model_serializers', '~> 0.10.2'
+gem 'jwt'
